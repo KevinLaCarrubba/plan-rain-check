@@ -13,11 +13,32 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Title</title>
   </head>
-  <header><h1>Hello</h1></header>
+  <header>
+    <div class="jumbotron container">
+      <h1 class="display-4">Night Out<span class="outside">(side?)</span></h1>
+      <p class="lead" style="color: black">
+        Enter a city below to see dining options and weather in the area.
+      </p>
+      <hr class="my-4" />
+    </div>
+  </header>
   <body>
+    <form class="container location-input">
+      <div class="input-group mb-3 input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Location</span>
+        </div>
+        <input type="text" class="form-control" /><button
+          type="button"
+          class="btn btn-outline-secondary"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
