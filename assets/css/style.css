@@ -1,3 +1,30 @@
-h1 {
-  color: blue;
+body {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 2rem);
+  background-image: url(../images/nightout.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* calculate to allow no scroll
+     by taking account of the margin */
+}
+
+.outside {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.location-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: rgba(89, 90, 165, 0.89);
+  border-radius: 0.3rem;
+  color: black;
 }
