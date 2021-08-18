@@ -1,3 +1,6 @@
+//Create a empty array for the business info we need
+var businessInfo = [];
+
 function yelpAPI() {
   var cityName = localStorage.getItem("City Name");
   var yelpURL =
@@ -17,26 +20,28 @@ function yelpAPI() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-      console.log(data.businesses[0].name);
-      console.log(data.businesses[0].display_phone);
-      console.log(data.businesses[0].image_url);
-      console.log(data.businesses[0].location.display_address.join(", "));
-
-      //   console.log("---Top 5 bussiness name---");
-      //   var firstCardDisplay = document.getElementById("first-card");
-      //   console.log(firstCardDisplay);
-
-      //   for (var i = 0; i < 5; i++) {
-      //     firstCardDisplay.textContent = data.businesses[0].name.value;
-      //     console.log(data.businesses[i].name);
-      //   }
+      for (var i = 0; i < 5; i++) {
+        var businessName = data.businesses[i].name;
+        var displayPhone = data.businesses[i].display_phone;
+        var image = data.businesses[i].image_url;
+        var displayAddress =
+          data.businesses[i].location.display_address.join(", ");
+        var yelpURL = data.businesses[i].url;
+        var businessObj = {
+          name: businessName,
+          phone: displayPhone,
+          image: image,
+          address: displayAddress,
+          url: yelpURL,
+        };
+        businessInfo.push(businessObj);
+      }
     })
     .catch(function (err) {
       console.error(err);
     });
 }
-
+console.log(businessInfo);
 //Weather API Function
 function weatherAPI() {
   //Global Search Variables
