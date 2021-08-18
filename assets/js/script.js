@@ -1,7 +1,3 @@
-//=====Yelp API Info=====
-
-//=====Weather API info=====
-
 //Button variable and listener
 var submitBtn = document.getElementById("submit-button");
 submitBtn.addEventListener("click", yelpAPI);
@@ -47,27 +43,16 @@ function yelpAPI() {
 
 //Weather API Function
 function weatherAPI() {
+//add event listener for button
+submitBtn.addEventListener("click", function (event) {
+  //prevent event default
   event.preventDefault();
-  window.location.href = "./display.html"
-  //Global Search Variables
+  //set variable for input area ID
   var search = document.getElementById("city-name");
+  //get the input value
   var cityName = search.value;
-  var weatherURL =
-    "https://api.weatherapi.com/v1/forecast.json?key=f3dd10a5b85d43bea96181956211608&q=" +
-    cityName +
-    "=5&aqi=no&alerts=no";
-  fetch(weatherURL)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      console.log("---City Name, State---");
-      console.log(data.location.name + ", " + data.location.region);
-      console.log("---Day's Avg Temp---");
-      console.log(data.forecast.forecastday[0].day.avgtemp_f);
-      console.log("---Day's Condition---");
-      console.log(data.current.condition.text);
-    });
-  yelpAPI();
-}
+  //set it to local storage
+  localStorage.setItem("City Name", cityName);
+  //reload window as display window
+  window.location.replace("./display.html");
+});
