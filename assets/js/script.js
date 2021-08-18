@@ -11,11 +11,12 @@ function weatherAPI() {
   event.preventDefault();
   //Global Search Variables
   var search = document.getElementById("city-name");
+  search.textContent = "";
   var cityName = search.value;
   var weatherURL =
     "https://api.weatherapi.com/v1/forecast.json?key=f3dd10a5b85d43bea96181956211608&q=" +
     cityName +
-    "=5&aqi=no&alerts=no";
+    "=1&aqi=no&alerts=no";
   fetch(weatherURL)
     .then(function (response) {
       return response.json();
@@ -28,7 +29,14 @@ function weatherAPI() {
       console.log(data.forecast.forecastday[0].day.avgtemp_f);
       console.log("---Day's Condition---");
       console.log(data.current.condition.text);
+      var locationEl = document.getElementById("city-name");
+      var tempEl = document.querySelector(".temp");
+      var windE = document.querySelector(".wind");
+      locationEl.textContent =
+        data.location.name.value + ", " + data.location.region.value;
+      tempEl.textContent = data.forecast.forecastday[0].day.avgtemp_f.value;
     });
+
   yelpAPI();
 }
 
