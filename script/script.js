@@ -1,4 +1,0 @@
-
-var searchDisplay = document.querySelector
-
- 
