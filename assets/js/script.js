@@ -5,6 +5,9 @@
 //Button variable and listener
 var submitBtn = document.getElementById("submit-button");
 submitBtn.addEventListener("click", weatherAPI);
+var searchBarDisplay = document.querySelector(".search-bar");
+var searchDisplaySearchBtn = document.querySelector(".searchbtn");
+searchDisplaySearchBtn.addEventListener("click", weatherAPI);
 
 //Weather API Function
 function weatherAPI() {
@@ -63,3 +66,5 @@ function yelpAPI() {
       console.error(err);
     });
 }
+
+//search bar and function in display page
