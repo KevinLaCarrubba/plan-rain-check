@@ -30,6 +30,10 @@ function yelpAPI() {
       console.log(data);
       console.log("---Top 5 bussiness name---");
       var firstCardDisplay = document.getElementById('first-card');
+      var secondCardDisplay = document.getElementById('second-card')
+      var thirdCardDisplay = document.getElementById('third-card')
+      var forthCardDisplay = document.getElementById('forth-card')
+      var fifthCardDisplay = document.getElementById('fifth-card')
       console.log(firstCardDisplay)
       firstCard.textContent = data.businesses[0].name.value
       for (var i = 0; i < 5; i++) {
