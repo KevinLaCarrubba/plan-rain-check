@@ -4,6 +4,7 @@
 
 //Button variable and listener
 var submitBtn = document.getElementById("submit-button");
+<<<<<<< HEAD
 submitBtn.addEventListener("click", weatherAPI);
 
 //Weather API Function
@@ -39,6 +40,9 @@ function weatherAPI() {
 
   yelpAPI();
 }
+=======
+submitBtn.addEventListener("click", yelpAPI);
+>>>>>>> 4a55c88928558bb677a9f8289014e33db2c35f2f
 
 //Yelp API Function
 function yelpAPI() {
@@ -63,6 +67,9 @@ function yelpAPI() {
     .then(function (data) {
       console.log(data);
       console.log("---Top 5 bussiness name---");
+      var firstCardDisplay = document.getElementById('first-card');
+      console.log(firstCardDisplay)
+      firstCard.textContent = data.businesses[0].name.value
       for (var i = 0; i < 5; i++) {
         console.log(data.businesses[i].name);
       }
@@ -70,4 +77,31 @@ function yelpAPI() {
     .catch(function (err) {
       console.error(err);
     });
+}
+
+//Weather API Function
+function weatherAPI() {
+  event.preventDefault();
+  window.location.href = "./display.html"
+  //Global Search Variables
+  var search = document.getElementById("city-name");
+  var cityName = search.value;
+  var weatherURL =
+    "https://api.weatherapi.com/v1/forecast.json?key=f3dd10a5b85d43bea96181956211608&q=" +
+    cityName +
+    "=5&aqi=no&alerts=no";
+  fetch(weatherURL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      console.log("---City Name, State---");
+      console.log(data.location.name + ", " + data.location.region);
+      console.log("---Day's Avg Temp---");
+      console.log(data.forecast.forecastday[0].day.avgtemp_f);
+      console.log("---Day's Condition---");
+      console.log(data.current.condition.text);
+    });
+  yelpAPI();
 }
