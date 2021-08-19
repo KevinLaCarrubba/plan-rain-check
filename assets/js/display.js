@@ -35,10 +35,6 @@ function yelpAPI() {
           url: yelpURL,
         };
         businessInfo.push(businessObj);
-        var name = document.createElement('h1')
-        var card = document.createElement('div')
-        card.append(cardTitle)
-        name.textContent = `${businessName}`
       }
     })
     .then(function () {
