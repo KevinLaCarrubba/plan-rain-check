@@ -20,46 +20,7 @@ function yelpAPI() {
       return response.json();
     })
     .then(function (data) {
-      //console.log(data);
-      //console.log(data.businesses[0].name);
-     // console.log(data.businesses[0].display_phone);
-      //console.log(data.businesses[0].image_url);
-      //console.log(data.businesses[0].location.display_address.join(", "));
-      //console.log(data.businesses[0].url);
-
-      //console.log(data.businesses[1].name);
-     // console.log(data.businesses[1].display_phone);
-      //console.log(data.businesses[1].image_url);
-      //console.log(data.businesses[1].location.display_address.join(", "));
-      //console.log(data.businesses[1].url);
-
-      //console.log(data.businesses[2].name);
-      //console.log(data.businesses[2].display_phone);
-      //console.log(data.businesses[2].image_url);
-      //console.log(data.businesses[2].location.display_address.join(", "));
-      //console.log(data.businesses[2].url);
-
-      //console.log(data.businesses[3].name);
-      //console.log(data.businesses[3].display_phone);
-      //console.log(data.businesses[3].image_url);
-      //console.log(data.businesses[3].location.display_address.join(", "));
-      //console.log(data.businesses[3].url);
-
-      //console.log(data.businesses[4].name);
-      //console.log(data.businesses[4].display_phone);
-      //console.log(data.businesses[4].image_url);
-      //console.log(data.businesses[4].location.display_address.join(", "));
-      //console.log(data.businesses[4].url);
-      
-      //   console.log("---Top 5 bussiness name---");
-      //   var firstCardDisplay = document.getElementById("first-card");
-      //   console.log(firstCardDisplay);
-
-      //   for (var i = 0; i < 5; i++) {
-      //     firstCardDisplay.textContent = data.businesses[0].name.value;
-      //     console.log(data.businesses[i].name);
-      //   }
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 9; i++) {
         var businessName = data.businesses[i].name;
         var displayPhone = data.businesses[i].display_phone;
         var image = data.businesses[i].image_url;
@@ -79,6 +40,9 @@ function yelpAPI() {
         card.append(cardTitle)
         name.textContent = `${businessName}`
       }
+    })
+    .then(function () {
+      renderCard();
     })
     .catch(function (err) {
       console.error(err);
@@ -110,3 +74,130 @@ function weatherAPI() {
 
 yelpAPI();
 weatherAPI();
+
+// var businessInfo = [];
+// var businessObj = {
+//   name: businessName,
+//   phone: displayPhone,
+//   image: image,
+//   address: displayAddress,
+//   url: yelpURL,
+// };
+var viewOne = document.getElementById("view-one");
+var viewTwo = document.getElementById("view-two");
+var viewThree = document.getElementById("view-three");
+function renderCard() {
+  businessInfo.forEach((item, key) => {
+    console.log(item.name);
+    console.log(key);
+    //create the 3 columns
+    if (key == 0 || key == 1 || key == 2) {
+      var createCol = document.createElement("div");
+      createCol.classList.add("col-md-4", "my-3");
+      //create the card
+      var createCard = document.createElement("div");
+      createCard.classList.add("card");
+      //creata and link card img
+      var cardImg = document.createElement("img");
+      cardImg.src = item.image;
+      //create the card body
+      var createCardBody = document.createElement("card-body");
+      createCardBody.classList.add("card-body");
+      //create the card title and give it the business name
+      var createCardTitle = document.createElement("h4");
+      createCardTitle.classList.add("card-title");
+      createCardTitle.textContent = item.name;
+      //create an unordered list for phone and adddress
+      var infoList = document.createElement("ul");
+      var phoneLi = document.createElement("li");
+      var addressLi = document.createElement("li");
+      phoneLi.textContent = item.phone;
+      addressLi.textContent = item.address;
+      //append phone and address to list
+      infoList.appendChild(addressLi);
+      infoList.appendChild(phoneLi);
+      //append the title then the list to the body
+      createCardBody.appendChild(createCardTitle);
+      createCardBody.appendChild(infoList);
+      //append the image then the body to the card
+      createCard.appendChild(cardImg);
+      createCard.appendChild(createCardBody);
+      //append the card tot he col
+      createCol.appendChild(createCard);
+      //append the row to the view-one display
+      viewOne.appendChild(createCol);
+    }
+    if (key == 3 || key == 4 || key == 5) {
+      var createCol = document.createElement("div");
+      createCol.classList.add("col-md-4", "my-3");
+      //create the card
+      var createCard = document.createElement("div");
+      createCard.classList.add("card");
+      //creata and link card img
+      var cardImg = document.createElement("img");
+      cardImg.src = item.image;
+      //create the card body
+      var createCardBody = document.createElement("card-body");
+      createCardBody.classList.add("card-body");
+      //create the card title and give it the business name
+      var createCardTitle = document.createElement("h4");
+      createCardTitle.classList.add("card-title");
+      createCardTitle.textContent = item.name;
+      //create an unordered list for phone and adddress
+      var infoList = document.createElement("ul");
+      var phoneLi = document.createElement("li");
+      var addressLi = document.createElement("li");
+      phoneLi.textContent = item.phone;
+      addressLi.textContent = item.address;
+      //append phone and address to list
+      infoList.appendChild(addressLi);
+      infoList.appendChild(phoneLi);
+      //append the title then the list to the body
+      createCardBody.appendChild(createCardTitle);
+      createCardBody.appendChild(infoList);
+      //append the image then the body to the card
+      createCard.appendChild(cardImg);
+      createCard.appendChild(createCardBody);
+      //append the card tot he col
+      createCol.appendChild(createCard);
+      //append the row to the view-one display
+      viewTwo.appendChild(createCol);
+    }
+    if (key == 6 || key == 7 || key == 8) {
+      var createCol = document.createElement("div");
+      createCol.classList.add("col-md-4", "my-3");
+      //create the card
+      var createCard = document.createElement("div");
+      createCard.classList.add("card");
+      //creata and link card img
+      var cardImg = document.createElement("img");
+      cardImg.src = item.image;
+      //create the card body
+      var createCardBody = document.createElement("card-body");
+      createCardBody.classList.add("card-body");
+      //create the card title and give it the business name
+      var createCardTitle = document.createElement("h4");
+      createCardTitle.classList.add("card-title");
+      createCardTitle.textContent = item.name;
+      //create an unordered list for phone and adddress
+      var infoList = document.createElement("ul");
+      var phoneLi = document.createElement("li");
+      var addressLi = document.createElement("li");
+      phoneLi.textContent = item.phone;
+      addressLi.textContent = item.address;
+      //append phone and address to list
+      infoList.appendChild(addressLi);
+      infoList.appendChild(phoneLi);
+      //append the title then the list to the body
+      createCardBody.appendChild(createCardTitle);
+      createCardBody.appendChild(infoList);
+      //append the image then the body to the card
+      createCard.appendChild(cardImg);
+      createCard.appendChild(createCardBody);
+      //append the card tot he col
+      createCol.appendChild(createCard);
+      //append the row to the view-one display
+      viewThree.appendChild(createCol);
+    }
+  });
+}
