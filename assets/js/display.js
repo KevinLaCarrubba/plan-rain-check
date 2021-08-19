@@ -59,26 +59,12 @@ function weatherAPI() {
     })
     .then(function (data) {
       console.log(data);
-      //   console.log("---City Name, State---");
-      //   console.log(data.location.name + ", " + data.location.region);
-      //   console.log("---Day's Avg Temp---");
-      //   console.log(data.forecast.forecastday[0].day.avgtemp_f);
-      //   console.log("---Day's Condition---");
-      //   console.log(data.current.condition.text);
     });
 }
 
 yelpAPI();
 weatherAPI();
 
-// var businessInfo = [];
-// var businessObj = {
-//   name: businessName,
-//   phone: displayPhone,
-//   image: image,
-//   address: displayAddress,
-//   url: yelpURL,
-// };
 var viewOne = document.getElementById("view-one");
 var viewTwo = document.getElementById("view-two");
 var viewThree = document.getElementById("view-three");
@@ -95,6 +81,7 @@ function renderCard() {
       createCard.classList.add("card");
       //creata and link card img
       var cardImg = document.createElement("img");
+      cardImg.classList.add("imgSize");
       cardImg.src = item.image;
       //create the card body
       var createCardBody = document.createElement("card-body");
@@ -107,11 +94,18 @@ function renderCard() {
       var infoList = document.createElement("ul");
       var phoneLi = document.createElement("li");
       var addressLi = document.createElement("li");
+      var urlLi = document.createElement("li");
+      var aUrl = document.createElement("a");
+      var textLink = document.createTextNode("Link to yelp");
+      aUrl.appendChild(textLink);
+      aUrl.href = item.url;
+      urlLi.appendChild(aUrl);
       phoneLi.textContent = item.phone;
       addressLi.textContent = item.address;
       //append phone and address to list
       infoList.appendChild(addressLi);
       infoList.appendChild(phoneLi);
+      infoList.appendChild(urlLi);
       //append the title then the list to the body
       createCardBody.appendChild(createCardTitle);
       createCardBody.appendChild(infoList);
@@ -131,6 +125,7 @@ function renderCard() {
       createCard.classList.add("card");
       //creata and link card img
       var cardImg = document.createElement("img");
+      cardImg.classList.add("imgSize");
       cardImg.src = item.image;
       //create the card body
       var createCardBody = document.createElement("card-body");
@@ -143,11 +138,18 @@ function renderCard() {
       var infoList = document.createElement("ul");
       var phoneLi = document.createElement("li");
       var addressLi = document.createElement("li");
+      var urlLi = document.createElement("li");
+      var aUrl = document.createElement("a");
+      var textLink = document.createTextNode("Link to yelp");
+      aUrl.appendChild(textLink);
+      aUrl.href = item.url;
+      urlLi.appendChild(aUrl);
       phoneLi.textContent = item.phone;
       addressLi.textContent = item.address;
       //append phone and address to list
       infoList.appendChild(addressLi);
       infoList.appendChild(phoneLi);
+      infoList.appendChild(urlLi);
       //append the title then the list to the body
       createCardBody.appendChild(createCardTitle);
       createCardBody.appendChild(infoList);
@@ -167,6 +169,7 @@ function renderCard() {
       createCard.classList.add("card");
       //creata and link card img
       var cardImg = document.createElement("img");
+      cardImg.classList.add("imgSize");
       cardImg.src = item.image;
       //create the card body
       var createCardBody = document.createElement("card-body");
@@ -179,11 +182,18 @@ function renderCard() {
       var infoList = document.createElement("ul");
       var phoneLi = document.createElement("li");
       var addressLi = document.createElement("li");
+      var urlLi = document.createElement("li");
+      var aUrl = document.createElement("a");
+      var textLink = document.createTextNode("Link to yelp");
+      aUrl.appendChild(textLink);
+      aUrl.href = item.url;
+      urlLi.appendChild(aUrl);
       phoneLi.textContent = item.phone;
       addressLi.textContent = item.address;
       //append phone and address to list
       infoList.appendChild(addressLi);
       infoList.appendChild(phoneLi);
+      infoList.appendChild(urlLi);
       //append the title then the list to the body
       createCardBody.appendChild(createCardTitle);
       createCardBody.appendChild(infoList);

@@ -14,6 +14,10 @@ body {
   font-size: 30px;
   font-weight: bolder;
 }
+h3 {
+  color: rgb(152, 141, 219);
+  text-align: left;
+}
 
 .location-input {
   display: flex;
@@ -29,8 +33,21 @@ body {
   color: black;
 }
 
+<<<<<<< HEAD
 h3 {
   color:rgb(152, 141, 219);
   text-align:left;
 };
 
+=======
+.imgSize {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+>>>>>>> 6f23918947fc72726460646c7377ca43f58d1d10
