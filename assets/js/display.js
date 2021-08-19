@@ -20,36 +20,37 @@ function yelpAPI() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-      console.log(data.businesses[0].name);
-      console.log(data.businesses[0].display_phone);
-      console.log(data.businesses[0].image_url);
-      console.log(data.businesses[0].location.display_address.join(", "));
-      console.log(data.businesses[0].url);
+      //console.log(data);
+      //console.log(data.businesses[0].name);
+     // console.log(data.businesses[0].display_phone);
+      //console.log(data.businesses[0].image_url);
+      //console.log(data.businesses[0].location.display_address.join(", "));
+      //console.log(data.businesses[0].url);
 
-      console.log(data.businesses[1].name);
-      console.log(data.businesses[1].display_phone);
-      console.log(data.businesses[1].image_url);
-      console.log(data.businesses[1].location.display_address.join(", "));
-      console.log(data.businesses[1].url);
+      //console.log(data.businesses[1].name);
+     // console.log(data.businesses[1].display_phone);
+      //console.log(data.businesses[1].image_url);
+      //console.log(data.businesses[1].location.display_address.join(", "));
+      //console.log(data.businesses[1].url);
 
-      console.log(data.businesses[2].name);
-      console.log(data.businesses[2].display_phone);
-      console.log(data.businesses[2].image_url);
-      console.log(data.businesses[2].location.display_address.join(", "));
-      console.log(data.businesses[2].url);
+      //console.log(data.businesses[2].name);
+      //console.log(data.businesses[2].display_phone);
+      //console.log(data.businesses[2].image_url);
+      //console.log(data.businesses[2].location.display_address.join(", "));
+      //console.log(data.businesses[2].url);
 
-      console.log(data.businesses[3].name);
-      console.log(data.businesses[3].display_phone);
-      console.log(data.businesses[3].image_url);
-      console.log(data.businesses[3].location.display_address.join(", "));
-      console.log(data.businesses[3].url);
+      //console.log(data.businesses[3].name);
+      //console.log(data.businesses[3].display_phone);
+      //console.log(data.businesses[3].image_url);
+      //console.log(data.businesses[3].location.display_address.join(", "));
+      //console.log(data.businesses[3].url);
 
-      console.log(data.businesses[4].name);
-      console.log(data.businesses[4].display_phone);
-      console.log(data.businesses[4].image_url);
-      console.log(data.businesses[4].location.display_address.join(", "));
-      console.log(data.businesses[4].url);
+      //console.log(data.businesses[4].name);
+      //console.log(data.businesses[4].display_phone);
+      //console.log(data.businesses[4].image_url);
+      //console.log(data.businesses[4].location.display_address.join(", "));
+      //console.log(data.businesses[4].url);
+      
       //   console.log("---Top 5 bussiness name---");
       //   var firstCardDisplay = document.getElementById("first-card");
       //   console.log(firstCardDisplay);
@@ -73,6 +74,10 @@ function yelpAPI() {
           url: yelpURL,
         };
         businessInfo.push(businessObj);
+        var name = document.createElement('h1')
+        var card = document.createElement('div')
+        card.append(cardTitle)
+        name.textContent = `${businessName}`
       }
     })
     .catch(function (err) {
