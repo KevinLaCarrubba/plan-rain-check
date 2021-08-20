@@ -52,3 +52,12 @@ ul {
 #modalBtn {
   text-align: left;
 }
+
+.opacity {
+  background-color: rgba(89, 90, 165, 0.89);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
