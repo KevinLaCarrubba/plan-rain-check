@@ -67,9 +67,9 @@ function weatherAPI() {
       var sunset = document.getElementById("sunset");
 
       description.textContent = data.current.condition.text;
-      temp.textContent = "Current Temp: " + data.current.temp_f;
+      temp.textContent = "Current Temp: " + data.current.temp_f + "℉";
       minTemp.textContent =
-        "Min Temp: " + data.forecast.forecastday[0].day.mintemp_f;
+        "Min Temp: " + data.forecast.forecastday[0].day.mintemp_f + "℉";
       wind.textContent = "Wind: " + data.current.wind_mph;
       futureDescription.textContent =
         "Later tonight will be " +
