@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Title</title>
   </head>
-  <!-- Put nav bar here -->
-  <nav class="navbar navbar-expand-lg justify-space-between opacity">
+  
+  <nav class="navbar navbar-expand-lg justify-content-between opacity">
     <a class="navbar-brand" href="./index.html">Night Out(side?)</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -35,10 +35,12 @@
           </div>
           <div class="modal-body">
           <ul>
-            <li id="temp">Temperature: </li>
-            <li id="wind">Wind: </li>
-            <li id="uv">UV index: </li>
-            <li id="current-status">Current Status: </li>
+            <li id="condition" style="font-weight: bold"></li>
+            <li id="temp"></li>
+            <li id="min-temp"></li>
+            <li id="wind"></li>
+            <li id="future-condition"></li>
+            <li id="sunset"></li>
           </ul>
         </div>
         <div class="modal-footer">

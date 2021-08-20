@@ -44,8 +44,8 @@ function yelpAPI() {
       console.error(err);
     });
 }
-console.log(businessInfo);
 //Weather API Function
+
 function weatherAPI() {
   //Global Search Variables
   var cityName = localStorage.getItem("City Name");
@@ -59,9 +59,28 @@ function weatherAPI() {
     })
     .then(function (data) {
       console.log(data);
+      var description = document.getElementById("condition");
+      var temp = document.getElementById("temp");
+      var minTemp = document.getElementById("min-temp");
+      var wind = document.getElementById("wind");
+      var futureDescription = document.getElementById("future-condition");
+      var sunset = document.getElementById("sunset");
+
+      description.textContent = data.current.condition.text;
+      temp.textContent = "Current Temp: " + data.current.temp_f;
+      minTemp.textContent =
+        "Min Temp: " + data.forecast.forecastday[0].day.mintemp_f;
+      wind.textContent = "Wind: " + data.current.wind_mph;
+      futureDescription.textContent =
+        "Later tonight will be " +
+        data.forecast.forecastday[0].day.condition.text +
+        " with a " +
+        data.forecast.forecastday[0].day.daily_chance_of_rain +
+        "% chance of rain.";
+      sunset.textContent =
+        "Sunset at " + data.forecast.forecastday[0].astro.sunset;
     });
 }
-
 
 yelpAPI();
 weatherAPI();
@@ -71,8 +90,6 @@ var viewTwo = document.getElementById("view-two");
 var viewThree = document.getElementById("view-three");
 function renderCard() {
   businessInfo.forEach((item, key) => {
-    console.log(item.name);
-    console.log(key);
     //create the 3 columns
     if (key == 0 || key == 1 || key == 2) {
       var createCol = document.createElement("div");
