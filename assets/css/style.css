@@ -33,13 +33,6 @@ h3 {
   color: black;
 }
 
-<<<<<<< HEAD
-h3 {
-  color:rgb(152, 141, 219);
-  text-align:left;
-};
-
-=======
 .imgSize {
   width: 100%;
   height: 15vw;
@@ -50,4 +43,12 @@ ul {
   padding-left: 0;
   list-style: none;
 }
->>>>>>> 6f23918947fc72726460646c7377ca43f58d1d10
+
+.card-body {
+  width: 100%;
+  height: 15vw;
+}
+
+#modalBtn {
+  text-align: left;
+}

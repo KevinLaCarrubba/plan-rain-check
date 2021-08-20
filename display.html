@@ -13,10 +13,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Title</title>
   </head>
-<<<<<<< HEAD
+  <!-- Put nav bar here -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,25 +27,30 @@
         <li class="nav-item active">
           <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Weather</a>
-        </li>
       </ul>
     </div>
+    <button id="modalBtn" type="button" class="btn btn-primary, modal-test" data-toggle="modal" data-target=".bd-example-modal-lg">Weather</button>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <ul>
+            <li id="temp">Temperature: </li>
+            <li id="wind">Wind: </li>
+            <li id="uv">UV index: </li>
+            <li id="current-status">Current Status: </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </nav>
-=======
-  <!-- Put nav bar here -->
->>>>>>> 6f23918947fc72726460646c7377ca43f58d1d10
+  
   <body>
     <section class="pt-5 pb-5">
       <div class="container">
         <div class="row">
           <div class="col-6">
-<<<<<<< HEAD
-            <h3 class="mb-3">Yelp's Top Picks</h3>
-=======
             <h3 class="mb-3 ">Yelp's Top Picks</h3>
->>>>>>> 6f23918947fc72726460646c7377ca43f58d1d10
           </div>
           <div class="col-6 text-right">
             <a
